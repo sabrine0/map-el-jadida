@@ -1,0 +1,380 @@
+[
+  {
+    "id": "cf_01",
+    "name": "Av. Houmane Al Fatouaki * Av. Houmane Al Fatouaki",
+    "lat": 33.2418269,
+    "lng": -8.503675,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Houmane Al Fatouaki",
+      "south": "Av. Houmane Al Fatouaki",
+      "east": "Av. Varennes",
+      "west": "Av. Varennes"
+    }
+  },
+  {
+    "id": "cf_02",
+    "name": "Av. Mohamed V * Av. Bir Anzarane",
+    "lat": 33.2420435,
+    "lng": -8.497896,
+    "status": "non régulé",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed V",
+      "south": "Av. Bir Anzarane",
+      "east": "Al Massira Al Khadra / Av. Annakhil",
+      "west": "Av. Varennes / Av. Al Moukawama"
+    }
+  },
+  {
+    "id": "cf_03",
+    "name": "Av. Mohamed VI * Av. des Nations Unies",
+    "lat": 33.2442216,
+    "lng": -8.4949658,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed VI",
+      "south": "Av. des Nations Unies",
+      "east": "Bd Mohamed V",
+      "west": "Av. Annakhil"
+    }
+  },
+  {
+    "id": "cf_04",
+    "name": "Av. Mohamed VI * Av. Mohamed VI",
+    "lat": 33.2491338,
+    "lng": -8.4989134,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed VI",
+      "south": "Av. Mohamed VI",
+      "east": "Av. des Forces Armées Royales",
+      "west": "Av. des Forces Armées Royales"
+    }
+  },
+  {
+    "id": "cf_05",
+    "name": "Av. Abderrahmane Doukkali * Av. Ben Badis",
+    "lat": 33.2481972,
+    "lng": -8.5177028,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Abderrahmane Doukkali",
+      "south": "Av. Ben Badis",
+      "east": "Av. Attahrir",
+      "west": "Av. Attahrir"
+    }
+  },
+  {
+    "id": "cf_06",
+    "name": "Av. Attahrir * Av. Annakhil",
+    "lat": 33.2445235,
+    "lng": -8.5137567,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Attahrir",
+      "south": "Av. Annakhil",
+      "east": "Av. Attahrir",
+      "west": "Av. Annakhil"
+    }
+  },
+  {
+    "id": "cf_07",
+    "name": "Av. Annakhil * Av. Bir Anzarane",
+    "lat": 33.2347906,
+    "lng": -8.5030224,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Annakhil",
+      "south": "Av. Bir Anzarane",
+      "east": "Av. des Forces Armées Royales",
+      "west": "Av. des Nations Unies"
+    }
+  },
+  {
+    "id": "cf_08",
+    "name": "Av. Annakhil * Bd Mohamed V",
+    "lat": 33.230116,
+    "lng": -8.4977626,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Annakhil",
+      "south": "Bd Mohamed V",
+      "east": "33°13'48.6 N 8°29'51.0 W",
+      "west": "Av. Mohamed V"
+    }
+  },
+  {
+    "id": "cf_09",
+    "name": "Av. Attahrir * Rue Al Khawarizmi",
+    "lat": 33.226471,
+    "lng": -8.4934644,
+    "status": "non régulé",
+    "notes": "",
+    "roads": {
+      "north": "Av. Attahrir",
+      "south": "Rue Al Khawarizmi",
+      "east": "Av. Abderrahmane Doukkali",
+      "west": "Rue Ibn Batouta"
+    }
+  },
+  {
+    "id": "cf_10",
+    "name": "Av. Attahrir * Rue Ibn Batouta",
+    "lat": 33.2296621,
+    "lng": -8.4880649,
+    "status": "non régulé",
+    "notes": "",
+    "roads": {
+      "north": "Av. Attahrir",
+      "south": "Rue Ibn Batouta",
+      "east": "Av. Bir Anzarane",
+      "west": "Rue Al Mouatamid Ibn Abbad"
+    }
+  },
+  {
+    "id": "cf_11",
+    "name": "Av. Bir Anzarane * Rue Ibn Khaldoun",
+    "lat": 33.2366353,
+    "lng": -8.482926,
+    "status": "non régulé",
+    "notes": "",
+    "roads": {
+      "north": "Av. Bir Anzarane",
+      "south": "Rue Ibn Khaldoun",
+      "east": "Rue Ibn Toufail",
+      "west": "Av. Annakhil"
+    }
+  },
+  {
+    "id": "cf_12",
+    "name": "Av. Mohamed V * Av. des Nations Unies",
+    "lat": 33.2333367,
+    "lng": -8.4932917,
+    "status": "non régulé",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed V",
+      "south": "Av. des Nations Unies",
+      "east": "Bd Mohamed V",
+      "west": "33.233333, -8.493801"
+    }
+  },
+  {
+    "id": "cf_13",
+    "name": "Bd Mohamed V * Av. Moulay Abdellah",
+    "lat": 33.2460231,
+    "lng": -8.5064472,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Bd Mohamed V",
+      "south": "Av. Moulay Abdellah",
+      "east": "Rue Oued Fès",
+      "west": "Av. Mohamed V"
+    }
+  },
+  {
+    "id": "cf_14",
+    "name": "Av. Mohamed V * Rue Oued Fès",
+    "lat": 33.2484869,
+    "lng": -8.5099426,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed V",
+      "south": "Rue Oued Fès",
+      "east": "Av. Moulay Abdellah",
+      "west": "Rue Chouhadae"
+    }
+  },
+  {
+    "id": "cf_15",
+    "name": "Av. Mohamed V * Rue Chouhadae",
+    "lat": 33.2476372,
+    "lng": -8.5094453,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed V",
+      "south": "Rue Chouhadae",
+      "east": "Rue Ibn Khaldoun",
+      "west": "Rue Essafa"
+    }
+  },
+  {
+    "id": "cf_16",
+    "name": "Rue Ibn Khaldoun * Rue Essafa",
+    "lat": 33.250619,
+    "lng": -8.5035495,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Rue Ibn Khaldoun",
+      "south": "Rue Essafa",
+      "east": "Rue El Massira",
+      "west": "Rue Chouhadae"
+    }
+  },
+  {
+    "id": "cf_17",
+    "name": "Rue Essafa * Av. Bir Anzarane",
+    "lat": 33.2459158,
+    "lng": -8.5116382,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Rue Essafa",
+      "south": "Av. Bir Anzarane",
+      "east": "Rue Ibn Khaldoun",
+      "west": "Av. Al Moukawama"
+    }
+  },
+  {
+    "id": "cf_18",
+    "name": "Av. Bir Anzarane * Rue Ibn Toufail",
+    "lat": 33.2445659,
+    "lng": -8.5132774,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Bir Anzarane",
+      "south": "Rue Ibn Toufail",
+      "east": "Rue Ibn Khaldoun",
+      "west": "Rue Ibn Batouta"
+    }
+  },
+  {
+    "id": "cf_19",
+    "name": "Av. Al Moukawama * Rue Ibn Batouta",
+    "lat": 33.2454445,
+    "lng": -8.5202514,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Al Moukawama",
+      "south": "Rue Ibn Batouta",
+      "east": "Rue Al Khawarizmi",
+      "west": "Rue Ibn Toufail"
+    }
+  },
+  {
+    "id": "cf_20",
+    "name": "Rue Al Khawarizmi * Av. Bir Anzarane",
+    "lat": 33.2439803,
+    "lng": -8.5222296,
+    "status": "équipé hors service",
+    "notes": "",
+    "roads": {
+      "north": "Rue Al Khawarizmi",
+      "south": "Av. Bir Anzarane",
+      "east": "Rue Ibn Batouta",
+      "west": "Rue Ibn Khaldoun"
+    }
+  },
+  {
+    "id": "cf_21",
+    "name": "Av. Mohamed V * Rue Annasr",
+    "lat": 33.2423629,
+    "lng": -8.5245102,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Petite voie interne menant vers Centre Loubna de kinésithérapie 33.242442, -8.524460",
+      "south": "Rue Annasr",
+      "east": "33.242470, -8.524259",
+      "west": "Une autre sortie non nommée qui rejoint R301: 33.242287, -8.524856  "
+    }
+  },
+  {
+    "id": "cf_22",
+    "name": "Bd Mohamed V * Rue Al Mouatamid Ibn Abbad",
+    "lat": 33.2399046,
+    "lng": -8.5291099,
+    "status": "équipé hors service",
+    "notes": "",
+    "roads": {
+      "north": "Bd Mohamed V",
+      "south": "Rue Al Mouatamid Ibn Abbad",
+      "east": "Rue Essafa",
+      "west": "Rue Chouhadae"
+    }
+  },
+  {
+    "id": "cf_23",
+    "name": "Rue Al Mouatamid Ibn Abbad * Rue Chouhadae",
+    "lat": 33.2379066,
+    "lng": -8.5315545,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Rue Al Mouatamid Ibn Abbad",
+      "south": "Rue Chouhadae",
+      "east": "Rue Essafa",
+      "west": "33°14'15.1 N 8°31'53.4 W"
+    }
+  },
+  {
+    "id": "cf_24",
+    "name": "Rue Ibn Khaldoun * Rue Al Mouatamid Ibn Abbad",
+    "lat": 33.2359607,
+    "lng": -8.5337475,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Rue Ibn Khaldoun",
+      "south": "Rue Al Mouatamid Ibn Abbad",
+      "east": "Rue Essafa",
+      "west": "Rue Ibn Toufail"
+    }
+  },
+  {
+    "id": "cf_25",
+    "name": "Av. des Forces Armées Royales * Av. des Forces Armées Royales",
+    "lat": 33.2474473,
+    "lng": -8.5031953,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. des Forces Armées Royales",
+      "south": "Av. des Forces Armées Royales",
+      "east": "Av. Ibn Khaldoun",
+      "west": "Av. Ibn Khaldoun"
+    }
+  },
+  {
+    "id": "cf_26",
+    "name": "Av. Mohamed V * Av. Mohamed V",
+    "lat": 33.2481271,
+    "lng": -8.5009615,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. Mohamed V",
+      "south": "Av. Mohamed V",
+      "east": "Av. des Forces Armées Royales",
+      "west": "Av. des Forces Armées Royales"
+    }
+  },
+  {
+    "id": "cf_27",
+    "name": "Av. des Nations Unies * Av. des Nations Unies",
+    "lat": 33.2441704,
+    "lng": -8.4878054,
+    "status": "équipé en service",
+    "notes": "",
+    "roads": {
+      "north": "Av. des Nations Unies",
+      "south": "Av. des Nations Unies",
+      "east": "Av. Al Oumam Al Moutahida",
+      "west": "Av. Setes"
+    }
+  }
+]

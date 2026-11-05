@@ -1,0 +1,258 @@
+[
+  {
+    "id": "cf_01",
+    "name": "Hassan II * El Massira Al Khadra",
+    "lat": 33.2418269,
+    "lng": -8.503675,
+    "status": "signalized_ardes",
+    "notes": "Carrefour équipé par Ardes.",
+    "roads": ["Avenue Hassan II", "Rue El Massira Al Khadra"]
+  },
+  {
+    "id": "cf_02",
+    "name": "Mohamed V * Ibn Khaldoun",
+    "lat": 33.2420435,
+    "lng": -8.497896,
+    "status": "unsignalized_heavy_flow",
+    "notes": "Non régulé; flux important observé.",
+    "roads": ["Boulevard Mohamed V", "Avenue Ibn Khaldoun"]
+  },
+  {
+    "id": "cf_03",
+    "name": "Mohamed V * An-Nasr",
+    "lat": 33.2442216,
+    "lng": -8.4949658,
+    "status": "signalized_ardes",
+    "notes": "Carrefour équipé par Ardes.",
+    "roads": ["Boulevard Mohamed V", "Avenue An-Nasr"]
+  },
+  {
+    "id": "cf_04",
+    "name": "Hassan II * Bir Anzarane",
+    "lat": 33.2491338,
+    "lng": -8.4989134,
+    "status": "signalized_ardes",
+    "notes": "Carrefour équipé par Ardes.",
+    "roads": ["Avenue Hassan II", "Avenue Bir Anzarane"]
+  },
+  {
+    "id": "cf_05",
+    "name": "Bir Anzarane * Route de Sidi Bouzid",
+    "lat": 33.2481972,
+    "lng": -8.5177028,
+    "status": "signalized_same_case",
+    "notes": "Même cas de figure (équipé).",
+    "roads": ["Avenue Bir Anzarane", "Route de Sidi Bouzid / Avenue Errafii"]
+  },
+  {
+    "id": "cf_06",
+    "name": "des FAR * Errafii",
+    "lat": 33.2445235,
+    "lng": -8.5137567,
+    "status": "signalized_same_case",
+    "notes": "Même cas de figure (équipé).",
+    "roads": ["Avenue des FAR", "Avenue Errafii"]
+  },
+  {
+    "id": "cf_07",
+    "name": "Ben Badis * Hassan II (sud)",
+    "lat": 33.2347906,
+    "lng": -8.5030224,
+    "status": "unsignalized_heavy_flow",
+    "notes": "Flux important sur Avenue Ben Badis.",
+    "roads": ["Avenue Ben Badis", "Avenue Hassan II (extension sud)"]
+  },
+  {
+  "id": "cf_08",
+  "name": "Ben Badis * Al Mostakbal",
+  "lat": 33.230116,
+  "lng": -8.4977626,
+  "status": "signalized_ardes",
+  "notes": "Carrefour récemment équipé par Ardes.",
+  "roads": ["Avenue Ben Badis", "Avenue Al Mostakbal"]
+},
+{
+  "id": "cf_09",
+  "name": "Ben Badis * R316",
+  "lat": 33.226471,
+  "lng": -8.4934644,
+  "status": "unsignalized_heavy_flow",
+  "notes": "Carrefour non régulé (flux important vers zones industrielles).",
+  "roads": ["Avenue Ben Badis", "Route R316 (vers zones industrielles)"]
+},
+{
+  "id": "cf_10",
+  "name": "Bir Anzarane * Khalil Jabrane",
+  "lat": 33.2296621,
+  "lng": -8.4880649,
+  "status": "unsignalized_heavy_flow",
+  "notes": "Flux important sur Avenue Bir Anzarane et Avenue Khalil Jabrane observé sur site.",
+  "roads": ["Avenue Bir Anzarane", "Avenue Khalil Jabrane"]
+},
+{
+  "id": "cf_11",
+  "name": "Al Mostakbal * Rue Ibn Sina",
+  "lat": 33.2366353,
+  "lng": -8.482926,
+  "status": "unsignalized_heavy_flow",
+  "notes": "Carrefour non régulé observé sur site, flux vers zone industrielle (R316).",
+  "roads": ["Avenue Al Mostakbal", "Rue Ibn Sina / Liaison R316"]
+},
+{
+  "id": "cf_12",
+  "name": "Ben Badis * Liaison locale vers R316",
+  "lat": 33.2333367,
+  "lng": -8.4932917,
+  "status": "unsignalized_heavy_flow",
+  "notes": "Carrefour non régulé observé sur site, situé sur le corridor sud vers la zone industrielle.",
+  "roads": ["Avenue Ben Badis", "Liaison locale vers Route R316"]
+},
+{
+  "id": "cf_13",
+  "name": "Hassan II * des FAR",
+  "lat": 33.2460231,
+  "lng": -8.5064472,
+  "status": "signalized_ardes",
+  "notes": "Carrefour récemment équipé par Ardes.",
+  "roads": ["Avenue Hassan II", "Avenue des FAR"]
+},
+{
+  "id": "cf_14",
+  "name": "Bir Anzarane * des FAR",
+  "lat": 33.2484869,
+  "lng": -8.5099426,
+  "status": "signalized_ardes",
+  "notes": "Même cas de figure (équipé par Ardes).",
+  "roads": ["Avenue Bir Anzarane", "Avenue des FAR"]
+},
+{
+  "id": "cf_15",
+  "name": "Hassan II * Bir Anzarane",
+  "lat": 33.2476372,
+  "lng": -8.5094453,
+  "status": "signalized_ardes",
+  "notes": "Même cas de figure (équipé par Ardes).",
+  "roads": ["Avenue Hassan II", "Avenue Bir Anzarane"]
+},
+{
+  "id": "cf_16",
+  "name": "Hassan II * Mohamed V",
+  "lat": 33.250619,
+  "lng": -8.5035495,
+  "status": "signalized_ardes",
+  "notes": "Carrefour récemment équipé par Ardes (axe central nord–sud / est–ouest).",
+  "roads": ["Avenue Hassan II", "Avenue Mohamed V"]
+},
+{
+  "id": "cf_17",
+  "name": "des FAR * Errafii",
+  "lat": 33.2459158,
+  "lng": -8.5116382,
+  "status": "signalized_ardes",
+  "notes": "Même cas de figure (carrefour équipé).",
+  "roads": ["Avenue des FAR", "Avenue Errafii"]
+},
+{
+  "id": "cf_18",
+  "name": "des FAR * Route de Sidi Bouzid",
+  "lat": 33.2445659,
+  "lng": -8.5132774,
+  "status": "signalized_ardes",
+  "notes": "Même cas de figure (équipé par Ardes).",
+  "roads": ["Avenue des FAR", "Route de Sidi Bouzid"]
+},
+{
+  "id": "cf_19",
+  "name": "Bir Anzarane * Route de Sidi Bouzid (ouest)",
+  "lat": 33.2454445,
+  "lng": -8.5202514,
+  "status": "signalized_ardes",
+  "notes": "Carrefour équipé par Ardes, point d’accès principal vers la plage de Sidi Bouzid.",
+  "roads": ["Avenue Bir Anzarane", "Route de Sidi Bouzid / Avenue Errafii"]
+},
+{
+  "id": "cf_20",
+  "name": "Bir Anzarane * Errafii (Sidi Bouzid Nord)",
+  "lat": 33.2439803,
+  "lng": -8.5222296,
+  "status": "signalized_off",
+  "notes": "Carrefour équipé par Ardes mais actuellement hors service.",
+  "roads": ["Avenue Bir Anzarane", "Avenue Errafii / Liaison Sidi Bouzid Nord"]
+},
+{
+  "id": "cf_21",
+  "name": "Bir Anzarane * Route Côtière (Sidi Bouzid Sud)",
+  "lat": 33.2423629,
+  "lng": -8.5245102,
+  "status": "signalized_ardes",
+  "notes": "Carrefour équipé par Ardes, au sud du corridor côtier.",
+  "roads": ["Avenue Bir Anzarane", "Route Côtière / Sidi Bouzid Sud"]
+},
+{
+  "id": "cf_22",
+  "name": "Hassan II * carrefour intermédiaire (centre-est)",
+  "lat": 33.2481271,
+  "lng": -8.5009615,
+  "status": "unknown",
+  "notes": "Carrefour situé sur l’axe Hassan II en partie centrale-est; état de régulation à valider.",
+  "roads": ["Avenue Hassan II"],
+  "to_validate": true
+},
+{
+  "id": "cf_23",
+  "name": "Sidi Bouzid * Errafii",
+  "lat": 33.2399046,
+  "lng": -8.5291099,
+  "status": "signalized_off",
+  "notes": "Carrefour équipé d’une SLT mais actuellement hors service.",
+  "roads": ["Route de Sidi Bouzid", "Avenue Errafii"]
+},
+{
+  "id": "cf_24",
+  "name": "Route d’Oualidia * Errafii (Sidi Bouzid Sud)",
+  "lat": 33.2379066,
+  "lng": -8.5315545,
+  "status": "unsignalized_heavy_flow",
+  "notes": "Flux important observé sur la route d’Oualidia vers la plage.",
+  "roads": ["Route d’Oualidia", "Avenue Errafii / Sidi Bouzid Sud"]
+},
+{
+  "id": "cf_25",
+  "name": "Route d’Oualidia * Côtière Sud",
+  "lat": 33.2359607,
+  "lng": -8.5337475,
+  "status": "unsignalized_heavy_flow",
+  "notes": "Carrefour non régulé à la sortie sud vers la plage de Sidi Bouzid / Oualidia.",
+  "roads": ["Route d’Oualidia", "Route Côtière Sud"]
+},
+{
+  "id": "cf_26",
+  "name": "Hassan II * Mohamed V (centre-ville)",
+  "lat": 33.2474473,
+  "lng": -8.5031953,
+  "status": "signalized_ardes",
+  "notes": "Carrefour central équipé par Ardes, croisement des deux axes principaux nord–sud et est–ouest.",
+  "roads": ["Avenue Hassan II", "Avenue Mohamed V"]
+},
+{
+  "id": "cf_27",
+  "name": "Mohamed V * An-Nasr (est de la ville)",
+  "lat": 33.2441704,
+  "lng": -8.4878054,
+  "status": "signalized_ardes",
+  "notes": "Carrefour équipé par Ardes situé sur le tronçon est de l’Avenue Mohamed V, direction RN1 (Casablanca).",
+  "roads": ["Boulevard Mohamed V", "Avenue An-Nasr / Liaison RN1"]
+}
+]
+
+
+
+
+
+
+
+
+
+
+
+

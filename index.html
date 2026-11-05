@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>El Jadida Traffic Controllers Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #f5f7fb;
+    }
+
+    .page {
+      padding: 24px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 16px 16px 0;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+
+    /* أهم شيء: ارتفاع الخريطة */
+    #map {
+      width: 100%;
+      height: 600px;            /* 👈 هذا كان ناقص */
+      border-radius: 14px 14px 0 0;
+    }
+
+    /* Legend */
+    .legend {
+      background: white;
+      padding: 8px 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .legend-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      margin-right: 6px;
+      border: 1px solid #11182722;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="title">El Jadida Traffic Controllers Map</div>
+    <div class="subtitle">
+      Geographic visualization of traffic intersections in El&nbsp;Jadida
+    </div>
+
+    <div class="card">
+      <div class="card-title">El Jadida Controller Locations</div>
+      <div class="card-subtitle">
+        View all intersections in El&nbsp;Jadida. Click on a marker to see
+        details.
+      </div>
+
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIJFqQD0Gi0XG6Z6kHcAt+U6H0C0A2Q="
+    crossorigin=""
+  ></script>
+
+  <script>
+    // ---------- Helpers ----------
+    function getColor(status) {
+      switch (status) {
+        case "signalized_ardes":
+          return "#16a34a"; // green
+        case "signalized_off":
+          return "#f97316"; // orange
+        case "signalized_same_case":
+          return "#3b82f6"; // blue
+        case "unsignalized_heavy_flow":
+          return "#ef4444"; // red
+        default:
+          return "#6b7280"; // gray
+      }
+    }
+
+    function getStatusLabel(status) {
+      switch (status) {
+        case "signalized_ardes":
+          return "Signalized – Ardes";
+        case "signalized_off":
+          return "Signalized – OFF";
+        case "signalized_same_case":
+          return "Signalized (same case)";
+        case "unsignalized_heavy_flow":
+          return "Unsignalized – Heavy flow";
+        default:
+          return status;
+      }
+    }
+
+    // ---------- Base map ----------
+    const map = L.map("map").setView([33.246, -8.506], 13);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "&copy; OpenStreetMap contributors",
+    }).addTo(map);
+
+    // ---------- Load JSON data ----------
+    fetch("carrefours_el_jadida.json")
+      .then((res) => res.json())
+      .then((carrefours) => {
+        const bounds = [];
+
+        carrefours.forEach((cf) => {
+          const color = getColor(cf.status);
+
+          const marker = L.circleMarker([cf.lat, cf.lng], {
+            radius: 8,
+            fillColor: color,
+            color: "#111827",
+            weight: 1,
+            opacity: 0.8,
+            fillOpacity: 0.9,
+          });
+
+          const roadsHtml = (cf.roads || [])
+            .map((r) => `<li>${r}</li>`)
+            .join("");
+
+          marker.bindPopup(
+            `
+            <div style="font-size:13px;">
+              <strong>${cf.name}</strong><br/>
+              <span style="color:#6b7280;">${getStatusLabel(cf.status)}</span><br/>
+              <small>${cf.notes || ""}</small>
+              ${
+                roadsHtml
+                  ? `<hr style="margin:6px 0;"/><strong>Roads:</strong><ul>${roadsHtml}</ul>`
+                  : ""
+              }
+              <small>ID: ${cf.id}</small>
+            </div>
+          `
+          );
+
+          marker.addTo(map);
+          bounds.push([cf.lat, cf.lng]);
+        });
+
+        if (bounds.length > 0) {
+          map.fitBounds(bounds, { padding: [30, 30] });
+        }
+      })
+      .catch((err) => {
+        console.error("Error loading JSON:", err);
+        alert("Error loading carrefours_el_jadida.json, check file name/path.");
+      });
+
+    // ---------- Legend ----------
+    const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "legend");
+      div.innerHTML = `
+        <div class="legend-row">
+          <div class="legend-color" style="background:#16a34a"></div>
+          <span>Signalized – Ardes</span>
+        </div>
+        <div class="legend-row">
+          <div class="legend-color" style="background:#f97316"></div>
+          <span>Signalized – OFF</span>
+        </div>
+        <div class="legend-row">
+          <div class="legend-color" style="background:#3b82f6"></div>
+          <span>Signalized (same case)</span>
+        </div>
+        <div class="legend-row">
+          <div class="legend-color" style="background:#ef4444"></div>
+          <span>Unsignalized – heavy flow</span>
+        </div>
+      `;
+      return div;
+    };
+
+    legend.addTo(map);
+  </script>
+</body>
+</html>

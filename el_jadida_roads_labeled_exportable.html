@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Jadida – Roads with Labeled Carrefours (Exportable PNG)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    :root { --bg:#0a0b10; --text:#eaf0ff; --muted:#9fb0cb; --accent:#ff7a18; --card:#121522; --border:#24314a; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background: var(--bg); color: var(--text); }
+    header{padding:22px 20px 6px 20px;}
+    h1{margin:0; font-size:28px;}
+    .sub{margin:6px 0 0; color:var(--muted); font-size:14px;}
+    .grid{display:grid; gap:16px; padding:16px 20px 32px 20px; grid-template-columns: repeat(auto-fit, minmax(360px,1fr));}
+    .card{background:linear-gradient(180deg,#121522,#101421); border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+    .card header{display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid var(--border);}
+    .card h2{margin:0; font-size:18px;}
+    .chip{background:#182035; color:#d5e6ff; border:1px solid #2a3a58; padding:4px 10px; border-radius:999px; font-size:12px;}
+    .map{height:300px; width:100%;}
+    .actions{display:flex; gap:8px; padding:10px 14px; border-top:1px solid var(--border); align-items:center; flex-wrap:wrap;}
+    .btn{background:#19233a; color:#eaf0ff; border:1px solid #2a3b5d; border-radius:10px; padding:8px 12px; font-weight:600; text-decoration:none; font-size:13px;}
+    .btn:hover{background:#223152;}
+    .note{color:var(--muted); font-size:12px;}
+    .leaflet-tooltip{background:#0f1524; color:#eaf0ff; border:1px solid #2a3957; border-radius:8px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>El Jadida – Roads with Labeled Carrefours</h1>
+    <p class="sub">Each map shows a single road in <b>orange</b> with <b>red points</b> for carrefours. Labels are always visible. Use “Export PNG” to save an image. Use the buttons to open locations in Google Maps.</p>
+  </header>
+
+  <div id="grid" class="grid"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-easyprint@2.1.9/dist/bundle.min.js"></script>
+  <script>
+    const roads = [
+      {
+        id: "a1",
+        name: "Autoroute A1",
+        type: "Highway",
+        google: "https://www.google.com/maps/search/?api=1&query=Autoroute+A1+El+Jadida",
+        polyline: [[33.270,-8.570],[33.255,-8.552],[33.235,-8.530],[33.210,-8.515]],
+        carrefours: [
+          { name:"Carrefour A1 × A103", coords:[33.2555,-8.5520] },
+          { name:"Carrefour vers N1 Nord", coords:[33.2450,-8.5350] },
+        ]
+      },
+      {
+        id:"a103",
+        name:"A103 – Pénétrante d’El Jadida",
+        type:"Expressway",
+        google:"https://www.google.com/maps/search/?api=1&query=A103+El+Jadida",
+        polyline: [[33.2555,-8.5520],[33.2470,-8.5180],[33.2395,-8.5115]],
+        carrefours:[
+          { name:"Carrefour A1 × A103", coords:[33.2555,-8.5520] },
+          { name:"Carrefour Mazagan Mall (A103 × N1 × R320)", coords:[33.2470,-8.5180] },
+          { name:"Carrefour Power Gym (A103 × Moulay Abdelkader)", coords:[33.2395,-8.5115] },
+        ]
+      },
+      {
+        id:"n1",
+        name:"Route Nationale N1",
+        type:"National",
+        google:"https://www.google.com/maps/search/?api=1&query=N1+El+Jadida",
+        polyline:[[33.2550,-8.4900],[33.2420,-8.4980],[33.2300,-8.5050],[33.2150,-8.5080]],
+        carrefours:[
+          { name:"Carrefour Sidi Moussa", coords:[33.2340,-8.5100] },
+          { name:"Carrefour Hay Ryad (N1 × Ahmed Chaouki)", coords:[33.2300,-8.5050] },
+          { name:"Carrefour Hay Al Qods", coords:[33.2250,-8.5005] },
+        ]
+      },
+      {
+        id:"r301",
+        name:"Route Régionale R301 (Côtière)",
+        type:"Regional",
+        google:"https://www.google.com/maps/search/?api=1&query=R301+El+Jadida",
+        polyline:[[33.2650,-8.5150],[33.2552,-8.5028],[33.2410,-8.5060],[33.2250,-8.5200]],
+        carrefours:[
+          { name:"Carrefour Corniche × Mohamed VI", coords:[33.2552,-8.5028] },
+          { name:"Carrefour Plage d’El Jadida", coords:[33.2510,-8.5000] },
+        ]
+      },
+      {
+        id:"r320",
+        name:"Route R320",
+        type:"Regional",
+        google:"https://www.google.com/maps/search/?api=1&query=R320+El+Jadida",
+        polyline:[[33.2320,-8.4890],[33.2385,-8.5010],[33.2470,-8.5180]],
+        carrefours:[
+          { name:"Carrefour Dehlya Corner (R320 × Annasr)", coords:[33.2385,-8.5010] },
+          { name:"Carrefour Mazagan Mall (R320 × A103 × N1)", coords:[33.2470,-8.5180] },
+        ]
+      },
+      {
+        id:"marrakech",
+        name:"Route de Marrakech (branche N1 sud)",
+        type:"National",
+        google:"https://www.google.com/maps/search/?api=1&query=Route+de+Marrakech+El+Jadida",
+        polyline:[[33.2250,-8.5005],[33.2050,-8.4850],[33.1850,-8.4700]],
+        carrefours:[
+          { name:"Carrefour Hay Al Qods × N1", coords:[33.2250,-8.5005] },
+        ]
+      },
+      {
+        id:"azemmour",
+        name:"Route d’Azemmour (branche N1 nord)",
+        type:"National",
+        google:"https://www.google.com/maps/search/?api=1&query=Route+d%27Azemmour+El+Jadida",
+        polyline:[[33.2300,-8.5050],[33.2420,-8.4980],[33.2550,-8.4900]],
+        carrefours:[
+          { name:"Carrefour Sidi Moussa", coords:[33.2340,-8.5100] },
+          { name:"Junction toward A1", coords:[33.2650,-8.5500] },
+        ]
+      },
+      {
+        id:"oualidia",
+        name:"Route d’Oualidia (branche R301 sud)",
+        type:"Regional",
+        google:"https://www.google.com/maps/search/?api=1&query=Route+d%27Oualidia+El+Jadida",
+        polyline:[[33.2410,-8.5060],[33.2320,-8.5150],[33.2200,-8.5350]],
+        carrefours:[
+          { name:"Carrefour Corniche × Mohamed VI", coords:[33.2552,-8.5028] },
+        ]
+      },
+    ];
+
+    const grid = document.getElementById("grid");
+
+    function googleLatLonLink(lat, lon, label="") {
+      const q = encodeURIComponent(`${lat},${lon}${label ? " ("+label+")" : ""}`);
+      return `https://www.google.com/maps/search/?api=1&query=${q}`;
+    }
+
+    // Render cards
+    roads.forEach(road => {
+      const card = document.createElement("section");
+      card.className = "card";
+      card.innerHTML = `
+        <header>
+          <h2>🛣️ ${road.name}</h2>
+          <span class="chip">${road.type}</span>
+        </header>
+        <div id="map_${road.id}" class="map"></div>
+        <div class="actions">
+          <a class="btn" target="_blank" rel="noopener" href="${road.google}">Open road in Google Maps</a>
+          <button class="btn" id="export_${road.id}">Export PNG</button>
+          <span class="note">Labels are permanent; click a red point for popup and coords.</span>
+        </div>
+      `;
+      grid.appendChild(card);
+
+      // init map
+      const map = L.map(`map_${road.id}`, { zoomControl:false, preferCanvas:true }).setView([33.2316,-8.5007], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
+
+      // route
+      const line = L.polyline(road.polyline, { color:"#ff7a18", weight:6, opacity:0.95 }).addTo(map);
+
+      // markers with labels
+      road.carrefours.forEach((c, idx) => {
+        const m = L.circleMarker(c.coords, { radius:7, color:"#111", fillColor:"#e63946", weight:2, fillOpacity:0.95 }).addTo(map);
+        m.bindPopup(`<b>${idx+1}. ${c.name}</b><br><small>${c.coords[0].toFixed(5)}, ${c.coords[1].toFixed(5)}</small>`);
+        m.bindTooltip(`${idx+1}. ${c.name}`, { permanent:true, direction:"right", offset:[10,0], opacity:0.9 });
+      });
+
+      // fit bounds
+      const bounds = L.latLngBounds(road.polyline.map(p => L.latLng(p[0],p[1])));
+      map.fitBounds(bounds.pad(0.25));
+
+      // export
+      const printer = L.easyPrint({ tileLayer: null, sizeModes: ['Current'], filename: road.id + "_labeled", exportOnly:true, hideControlContainer: false }).addTo(map);
+      document.getElementById("export_"+road.id).addEventListener("click", () => printer.printMap('CurrentSize', road.id + "_labeled"));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; color: #111; background: #fafafa; }
+
+header { padding: 12px 16px; background: #fff; border-bottom: 1px solid #e5e7eb; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+header h1 { font-size: 20px; margin: 0; }
+header p { margin: 0; color: #555; }
+.controls { margin-left:auto; display:flex; gap:8px; flex-wrap:wrap; }
+.controls button { padding: 8px 10px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; }
+.controls button:hover { background: #f2f2f2; }
+
+main { display: grid; grid-template-columns: 1fr 360px; gap: 0; height: calc(100vh - 90px); }
+#map { width: 100%; height: 100%; }
+#panel { padding: 16px; background: #fff; border-left: 1px solid #e5e7eb; overflow: auto; }
+#title { margin-top: 0; }
+
+.badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid #ddd; background:#f9fafb; }
+.legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.legend-item { display:flex; align-items:center; gap:8px; font-size: 13px; background:#f9fafb; padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb; }
+.swatch { width: 18px; height: 4px; display:inline-block; border-radius:2px; }
+
+#exportBox { width: 100%; min-height: 180px; margin-top: 12px; padding: 10px; border:1px solid #e5e7eb; border-radius:8px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:12px; resize: vertical; }
+
+footer { padding: 8px 16px; border-top: 1px solid #e5e7eb; background: #fff; }
+
+@media (max-width: 980px) {
+  main { grid-template-columns: 1fr; }
+  #panel { border-left: none; border-top: 1px solid #e5e7eb; height: 300px; }
+  #map { height: calc(100vh - 90px - 300px); }
+}
